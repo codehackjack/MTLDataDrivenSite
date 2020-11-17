@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Bootstrap Init Stuff (Styling of website)-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<!-- JQuery Init Stuff (function of website)-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Website Functionality (function of website)-->
+		<script>
+
+			function GrabRoster(){
+				alert("Page is Loaded");
+			}
+
+			function getInnerText() {
+			  alert(document.getElementById("test").innerText)
+			}
+
+			function getHTML() {
+			  alert(document.getElementById("test").innerHTML)
+			}
+
+			function getTextContent() {
+			  alert(document.getElementById("test").textContent)
+			}
+
+			function testJS() {
+			    //var b = document.getElementById('name').value,
+
+			    var els = document.getElementsByTagName('span'), i = 0, price;
+			    url = 'https://www.hockey-reference.com/players/s/suzukni01.html#' + encodeURIComponent(els);
+
+			    var price = document.querySelector('[itemprop=name]').textContent;
+			    //document.location.href = url;
+			    console.log(price);
+				for(i; i < els.length; i++) {
+				    prop = els[i].getAttribute('itemprop');
+
+				    if(prop) {
+				        price = els[i].innerHTML;
+				        break;
+				    }
+				}
+				alert(price);
+			}
+		</script>
+		<title>Page Title</title>
+	</head>
+
+	<!-- Website layout -->
+	<body onload="GrabRoster()">
+		<div class="container fluid">
+			<div class="row">
+				<div class="text-center" style="background-color: red"> Bubba's MTL Canadiens Data Driven Analysis Website </div><br>
+			</div>	
+			<div class="row">
+				<div class="col-sm-3" style="background-color: blue"></div>
+				<div class="col-sm-6 text-center" style="background-color: white"> Game at a glance</div>
+				<div class="col-sm-3" style="background-color: blue"></div>
+			</div>
+		</div>
+		<!--
+		<button onclick="getInnerText()">Get innerText</button>
+		<button onclick="getHTML()">Get innerHTML</button>
+		<button onclick="getTextContent()">Get textContent</button>
+		<button onclick="testJS()">Try Webscrape</button>
+		<h1>This is from wiki <div id="test">Richard</div></h1>
+		-->
+
+	</body>
+</html>
